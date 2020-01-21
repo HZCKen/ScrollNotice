@@ -14,6 +14,7 @@
 @interface ViewController ()<HZCScrollNoticeViewDelegate>
 /** <#Description#> */
 @property (nonatomic, strong) NSArray *arr1;
+@property (weak, nonatomic) IBOutlet HZCScrollNoticeView *noticeView4;
 
 /** <#Description#> */
 @property (nonatomic, strong) HZCScrollNoticeView *noticeView;
@@ -43,25 +44,27 @@
     
     
     NSLog(@"viewDidLoad %ld", self.arr1.count);
+    self.noticeView4.stayInterval = 3;
+    self.noticeView4.datas = self.arr1;
+//    self.noticeView4.backgroundColor = [UIColor redColor];
     
+//    // 默认
     self.noticeView = [[HZCScrollNoticeView alloc]init];
-    self.noticeView.backgroundColor = [UIColor redColor];
+//    self.noticeView.backgroundColor = [UIColor redColor];
     self.noticeView.frame = CGRectMake(0, 100, 375, 40);
     self.noticeView.datas = self.arr1;
-    self.noticeView.delegate = self;
+//    self.noticeView.delegate = self;
     [self.view addSubview:self.noticeView];
-//
-//    [self.noticeView setDidSelect:^(NSIndexPath * _Nonnull indexPath) {
-//        NSLog(@"%@", self.arr1[indexPath.row]);
-//    }];
-    
+//    // 使用自定义cell 必须继承 HZCScrollNoticeTableViewCell
+//    // 自定义cell
 //    HZCScrollNoticeView *noticeView2 = [[HZCScrollNoticeView alloc]init];
 //    noticeView2.frame = CGRectMake(0, 150, 375, 40);
 //    [noticeView2 registerClass:[Demo1Cell class] forCellReuseIdentifier:[Demo1Cell cellIdentifier]];
 //    noticeView2.datas = self.arr1;
 //    [self.view addSubview:noticeView2];
-////    [noticeView2 startScroll];
+//    [noticeView2 startScroll];
 //    
+//    // 自定义cell xib
 //    HZCScrollNoticeView *noticeView3 = [[HZCScrollNoticeView alloc]init];
 //    noticeView3.frame = CGRectMake(0, 200, 375, 100);
 //    [noticeView3 registerNib:[UINib nibWithNibName:[Demo2Cell cellIdentifier] bundle:nil] forCellReuseIdentifier:[Demo2Cell cellIdentifier]];
@@ -69,7 +72,7 @@
 //    noticeView3.datas = arr2;
 //    self.noticeView3 = noticeView3;
 ////    self.noticeView3.delegate = self;
-//    
+//    [self.noticeView3 startScroll];
 //    [self.noticeView3 setConfigCell:^(HZCScrollNoticeTableViewCell * _Nonnull cell, id  _Nonnull data) {
 //        Demo2Cell *demo2Cell = (Demo2Cell *)cell;
 //        NSDictionary *dict = (NSDictionary *)data;
@@ -82,7 +85,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [self.noticeView startScroll];
-
+    [self.noticeView4 startScroll];
 }
 
 - (void)noticeView:(HZCScrollNoticeView *)noticeView configCell:(HZCScrollNoticeTableViewCell *)cell data:(id)data {

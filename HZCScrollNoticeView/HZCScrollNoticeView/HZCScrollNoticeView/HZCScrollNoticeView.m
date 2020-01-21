@@ -27,6 +27,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self setupUI];
+        [self initData];
     }
     return self;
 }
@@ -35,13 +36,17 @@
     self = [super initWithCoder:coder];
     if (self) {
         [self setupUI];
+        [self initData];
     }
     return self;
 }
 
 - (void)setupUI {
     [self addSubview:self.tableView];
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+}
+
+- (void)initData {
+    self.stayInterval = 1;
 }
 
 - (void)layoutSubviews {
@@ -49,6 +54,9 @@
     CGFloat w = self.frame.size.width;
     CGFloat h = self.frame.size.height-1;
     self.tableView.frame = CGRectMake(0, 0, w, h);
+    // UITableViewCellSeparatorStyleNone 在使用约束的时候 在layoutSubviews 才生效
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
 }
 
 - (void)registerClass:(Class)cellClass forCellReuseIdentifier:(NSString *)identifier {
@@ -64,7 +72,7 @@
 - (void)startScroll {
     if (self.timer == nil) {
         self.index = 0;
-        self.timer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(startScroll) userInfo:nil repeats:YES];
+        self.timer = [NSTimer timerWithTimeInterval:self.stayInterval target:self selector:@selector(startScroll) userInfo:nil repeats:YES];
         [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:(NSRunLoopCommonModes)];
     }
     if (self.index < self.datas.count - 1) {
@@ -144,6 +152,7 @@
         _tableView.bounces = NO;
         _tableView.showsVerticalScrollIndicator = NO;
         _tableView.scrollEnabled = NO;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 //        _tableView.pagingEnabled = YES;
         [_tableView registerClass:[HZCScrollNoticeTableViewCell class] forCellReuseIdentifier:[HZCScrollNoticeTableViewCell cellIdentifier]];
     }

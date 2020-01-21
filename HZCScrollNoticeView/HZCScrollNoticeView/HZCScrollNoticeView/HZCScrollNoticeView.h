@@ -28,7 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** delegate */
 @property (nonatomic, weak) id<HZCScrollNoticeViewDelegate> delegate;
-
+/** 定时器时间 默认1s */
+@property (nonatomic, assign) NSTimeInterval stayInterval;
 /** <#Description#> */
 @property (nonatomic, copy) void (^configCell)(HZCScrollNoticeTableViewCell *cell, id data);
 
