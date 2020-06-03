@@ -20,6 +20,8 @@
 		1842BD6323D59F3700D2AC12 /* HZCScrollNoticeViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842BD6223D59F3700D2AC12 /* HZCScrollNoticeViewUITests.m */; };
 		1842BD7323D59FED00D2AC12 /* HZCScrollNoticeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842BD7223D59FED00D2AC12 /* HZCScrollNoticeView.m */; };
 		1842BD7623D5B00F00D2AC12 /* HZCScrollNoticeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842BD7523D5B00F00D2AC12 /* HZCScrollNoticeTableViewCell.m */; };
+		18CE9E4F24877DB800488549 /* UUMarqueeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CE9E4E24877DB700488549 /* UUMarqueeView.m */; };
+		18CE9E522487867D00488549 /* KJMarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CE9E512487867D00488549 /* KJMarqueeLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,10 @@
 		1842BD7223D59FED00D2AC12 /* HZCScrollNoticeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZCScrollNoticeView.m; sourceTree = "<group>"; };
 		1842BD7423D5B00F00D2AC12 /* HZCScrollNoticeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZCScrollNoticeTableViewCell.h; sourceTree = "<group>"; };
 		1842BD7523D5B00F00D2AC12 /* HZCScrollNoticeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZCScrollNoticeTableViewCell.m; sourceTree = "<group>"; };
+		18CE9E4D24877DB700488549 /* UUMarqueeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUMarqueeView.h; sourceTree = "<group>"; };
+		18CE9E4E24877DB700488549 /* UUMarqueeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUMarqueeView.m; sourceTree = "<group>"; };
+		18CE9E502487867D00488549 /* KJMarqueeLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KJMarqueeLabel.h; sourceTree = "<group>"; };
+		18CE9E512487867D00488549 /* KJMarqueeLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KJMarqueeLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,9 +121,12 @@
 		1842BD3A23D59F2200D2AC12 /* HZCScrollNoticeView */ = {
 			isa = PBXGroup;
 			children = (
+				18CE9E4C24877DB700488549 /* UUMarqueeView */,
 				1842BD7023D59FD900D2AC12 /* HZCScrollNoticeView */,
 				1842BD3B23D59F2200D2AC12 /* AppDelegate.h */,
 				1842BD3C23D59F2200D2AC12 /* AppDelegate.m */,
+				18CE9E502487867D00488549 /* KJMarqueeLabel.h */,
+				18CE9E512487867D00488549 /* KJMarqueeLabel.m */,
 				1842BD4123D59F2200D2AC12 /* ViewController.h */,
 				1842BD4223D59F2200D2AC12 /* ViewController.m */,
 				1802666023D6952C0067D83D /* Demo1Cell.h */,
@@ -161,6 +170,15 @@
 				1842BD7523D5B00F00D2AC12 /* HZCScrollNoticeTableViewCell.m */,
 			);
 			path = HZCScrollNoticeView;
+			sourceTree = "<group>";
+		};
+		18CE9E4C24877DB700488549 /* UUMarqueeView */ = {
+			isa = PBXGroup;
+			children = (
+				18CE9E4D24877DB700488549 /* UUMarqueeView.h */,
+				18CE9E4E24877DB700488549 /* UUMarqueeView.m */,
+			);
+			path = UUMarqueeView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,8 +314,10 @@
 			files = (
 				1842BD7623D5B00F00D2AC12 /* HZCScrollNoticeTableViewCell.m in Sources */,
 				1842BD4323D59F2200D2AC12 /* ViewController.m in Sources */,
+				18CE9E522487867D00488549 /* KJMarqueeLabel.m in Sources */,
 				1802666623D6A0260067D83D /* Demo2Cell.m in Sources */,
 				1842BD7323D59FED00D2AC12 /* HZCScrollNoticeView.m in Sources */,
+				18CE9E4F24877DB800488549 /* UUMarqueeView.m in Sources */,
 				1842BD3D23D59F2200D2AC12 /* AppDelegate.m in Sources */,
 				1802666223D6952C0067D83D /* Demo1Cell.m in Sources */,
 				1842BD4E23D59F3600D2AC12 /* main.m in Sources */,
